@@ -1,7 +1,8 @@
 require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "#home is accessible by anyone" do
+    get root_path
+    assert_response :success
+  end
 end
