@@ -2,4 +2,4 @@
 
 simon: 
   email: [email protected]
-  password_digest: TODO
+  password_digest: <%= BCrypt::Password.create('password') %>
