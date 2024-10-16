@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/create'
   root "pages#home"
   resource :dashboard, only: :show
 
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
 
   # Login and logout
   resource :session, only: %i[new create destroy]
+  resource :password_reset, only: %i[new create edit update]
 
   get "up" => "rails/health#show", as: :rails_health_check
 end
